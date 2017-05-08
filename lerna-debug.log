@@ -1,0 +1,144 @@
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ], sort: true, concurrency: 4 }
+2 verbose rootPath C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment
+3 info version 2.0.0-rc.4
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\VERSION
+7 silly initialize attempt
+8 info current version 0.0.0
+9 silly getUpdates
+10 info Checking for updated packages...
+11 silly hasTags
+12 verbose hasTags false
+13 warn No tags found!
+14 info Comparing with initial commit.
+15 verbose has update angulardesign
+16 silly collectDependents
+17 silly isPackageDependentOf angulardesign angulardesign
+18 silly collectUpdates
+19 verbose has filtered update angulardesign
+20 silly initialize success
+21 silly execute attempt
+22 silly isDetachedHead
+23 silly getCurrentBranch
+24 verbose getCurrentBranch master
+25 verbose isDetachedHead false
+26 silly addFile C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\lerna.json
+27 silly addFile C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\package.json
+28 silly commit v0.0.1
+29 verbose commit [ 'commit', '-m', 'v0.0.1' ]
+30 silly addTag v0.0.1
+31 info publish Publishing packages to npm...
+32 silly existsSync C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\scripts\prepublish.js
+33 verbose execScript No prepublish script found at C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\scripts\prepublish.js
+34 verbose publishing angulardesign
+35 silly publishTaggedInDir latest angularDesign
+36 silly getExecOpts { cwd: 'C:\\Users\\jasde\\FrontEndDevelopment\\Angular\\AngularWebDevelopment\\packages\\angularDesign' }
+37 error publish Retrying failed publish: angulardesign
+38 verbose publish error Error: Command failed: npm publish --tag latest
+38 verbose publish error npm ERR! Windows_NT 10.0.14393
+38 verbose publish error npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "--tag" "latest"
+38 verbose publish error npm ERR! node v6.3.0
+38 verbose publish error npm ERR! npm  v3.10.3
+38 verbose publish error npm ERR! code ENEEDAUTH
+38 verbose publish error
+38 verbose publish error npm ERR! need auth auth required for publishing
+38 verbose publish error npm ERR! need auth You need to authorize this machine using `npm adduser`
+38 verbose publish error
+38 verbose publish error npm ERR! Please include the following file with any support request:
+38 verbose publish error npm ERR!     C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\npm-debug.log
+38 verbose publish error
+38 verbose publish error     at Promise.all.then.arr (C:\Users\jasde\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:210:11)
+38 verbose publish error     at process._tickCallback (internal/process/next_tick.js:103:7)
+39 verbose publishing angulardesign
+40 silly publishTaggedInDir latest angularDesign
+41 silly getExecOpts { cwd: 'C:\\Users\\jasde\\FrontEndDevelopment\\Angular\\AngularWebDevelopment\\packages\\angularDesign' }
+42 error publish Retrying failed publish: angulardesign
+43 verbose publish error Error: Command failed: npm publish --tag latest
+43 verbose publish error npm ERR! Windows_NT 10.0.14393
+43 verbose publish error npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "--tag" "latest"
+43 verbose publish error npm ERR! node v6.3.0
+43 verbose publish error npm ERR! npm  v3.10.3
+43 verbose publish error npm ERR! code ENEEDAUTH
+43 verbose publish error
+43 verbose publish error npm ERR! need auth auth required for publishing
+43 verbose publish error npm ERR! need auth You need to authorize this machine using `npm adduser`
+43 verbose publish error
+43 verbose publish error npm ERR! Please include the following file with any support request:
+43 verbose publish error npm ERR!     C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\npm-debug.log
+43 verbose publish error
+43 verbose publish error     at Promise.all.then.arr (C:\Users\jasde\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:210:11)
+43 verbose publish error     at process._tickCallback (internal/process/next_tick.js:103:7)
+44 verbose publishing angulardesign
+45 silly publishTaggedInDir latest angularDesign
+46 silly getExecOpts { cwd: 'C:\\Users\\jasde\\FrontEndDevelopment\\Angular\\AngularWebDevelopment\\packages\\angularDesign' }
+47 error publish Retrying failed publish: angulardesign
+48 verbose publish error Error: Command failed: npm publish --tag latest
+48 verbose publish error npm ERR! Windows_NT 10.0.14393
+48 verbose publish error npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "--tag" "latest"
+48 verbose publish error npm ERR! node v6.3.0
+48 verbose publish error npm ERR! npm  v3.10.3
+48 verbose publish error npm ERR! code ENEEDAUTH
+48 verbose publish error
+48 verbose publish error npm ERR! need auth auth required for publishing
+48 verbose publish error npm ERR! need auth You need to authorize this machine using `npm adduser`
+48 verbose publish error
+48 verbose publish error npm ERR! Please include the following file with any support request:
+48 verbose publish error npm ERR!     C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\npm-debug.log
+48 verbose publish error
+48 verbose publish error     at Promise.all.then.arr (C:\Users\jasde\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:210:11)
+48 verbose publish error     at process._tickCallback (internal/process/next_tick.js:103:7)
+49 verbose publishing angulardesign
+50 silly publishTaggedInDir latest angularDesign
+51 silly getExecOpts { cwd: 'C:\\Users\\jasde\\FrontEndDevelopment\\Angular\\AngularWebDevelopment\\packages\\angularDesign' }
+52 error publish Retrying failed publish: angulardesign
+53 verbose publish error Error: Command failed: npm publish --tag latest
+53 verbose publish error npm ERR! Windows_NT 10.0.14393
+53 verbose publish error npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "--tag" "latest"
+53 verbose publish error npm ERR! node v6.3.0
+53 verbose publish error npm ERR! npm  v3.10.3
+53 verbose publish error npm ERR! code ENEEDAUTH
+53 verbose publish error
+53 verbose publish error npm ERR! need auth auth required for publishing
+53 verbose publish error npm ERR! need auth You need to authorize this machine using `npm adduser`
+53 verbose publish error
+53 verbose publish error npm ERR! Please include the following file with any support request:
+53 verbose publish error npm ERR!     C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\npm-debug.log
+53 verbose publish error
+53 verbose publish error     at Promise.all.then.arr (C:\Users\jasde\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:210:11)
+53 verbose publish error     at process._tickCallback (internal/process/next_tick.js:103:7)
+54 verbose publishing angulardesign
+55 silly publishTaggedInDir latest angularDesign
+56 silly getExecOpts { cwd: 'C:\\Users\\jasde\\FrontEndDevelopment\\Angular\\AngularWebDevelopment\\packages\\angularDesign' }
+57 error publish Ran out of retries while publishing angulardesign Error: Command failed: npm publish --tag latest
+57 error publish npm ERR! Windows_NT 10.0.14393
+57 error publish npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "--tag" "latest"
+57 error publish npm ERR! node v6.3.0
+57 error publish npm ERR! npm  v3.10.3
+57 error publish npm ERR! code ENEEDAUTH
+57 error publish
+57 error publish npm ERR! need auth auth required for publishing
+57 error publish npm ERR! need auth You need to authorize this machine using `npm adduser`
+57 error publish
+57 error publish npm ERR! Please include the following file with any support request:
+57 error publish npm ERR!     C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\npm-debug.log
+57 error publish
+57 error publish     at Promise.all.then.arr (C:\Users\jasde\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:210:11)
+57 error publish     at process._tickCallback (internal/process/next_tick.js:103:7)
+58 error execute callback with error
+58 error execute  Error: Command failed: npm publish --tag latest
+58 error execute npm ERR! Windows_NT 10.0.14393
+58 error execute npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "--tag" "latest"
+58 error execute npm ERR! node v6.3.0
+58 error execute npm ERR! npm  v3.10.3
+58 error execute npm ERR! code ENEEDAUTH
+58 error execute
+58 error execute npm ERR! need auth auth required for publishing
+58 error execute npm ERR! need auth You need to authorize this machine using `npm adduser`
+58 error execute
+58 error execute npm ERR! Please include the following file with any support request:
+58 error execute npm ERR!     C:\Users\jasde\FrontEndDevelopment\Angular\AngularWebDevelopment\packages\angularDesign\npm-debug.log
+58 error execute
+58 error execute     at Promise.all.then.arr (C:\Users\jasde\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:210:11)
+58 error execute     at process._tickCallback (internal/process/next_tick.js:103:7)
