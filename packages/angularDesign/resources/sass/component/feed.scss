@@ -1,0 +1,78 @@
+$minHeight: 245px;
+$width: 440px;
+
+@mixin body-activity-stream {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-wrap: wrap;
+}
+@mixin feed-item-wrapper {
+  //  border: solid black 1px;
+  margin: 20px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+@mixin feed-item-container {
+  margin-left: 10px;
+  width: $width;
+  min-height: $minHeight;
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 2px #888888;
+  .feed-item-prof-name {
+    height: 50px;
+    div.prof-name {
+      width: $width * 2/3;
+      float: left;
+      font-size: 14px;
+      padding-top: 5px;
+      div.prof-wrapper {
+        padding-left: 40px;
+        .feed-item-name {
+          font-weight: bold;
+        }
+        .feed-item-type {
+          font-size: 12px;
+        }
+      }
+    }
+    div.timestamp {
+      width: $width * 1/3;
+      float: left;
+      text-align: right;
+      padding-top: 10px;
+      font-size: 11px;
+      div {
+        padding-right: 15px;
+      }
+    }
+  }
+  .feed-item-body {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@mixin feed-profile-image {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -20px;
+  border-radius: 50%;
+}
+
+@mixin feed-item-style {
+  .feed-item-wrapper {
+    @include feed-item-wrapper;
+    .feed-profile-image {
+      @include feed-profile-image;
+    }
+    .feed-item {
+      @include feed-item-container;
+    }
+  }
+}
