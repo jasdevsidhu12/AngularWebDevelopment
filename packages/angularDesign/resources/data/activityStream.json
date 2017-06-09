@@ -3,11 +3,29 @@
         {
             "firstName": "Jasdev",
             "lastName": "Sidhu",
-            "profilePic": "",
+            "profilePic": "../../resources/data/profile_images/trevor_noah.jpeg",
             "type": "post a message",
             "title": "",
             "summary": "I have created a new linkedIn profile to increase my connectivity",
-            "timestamp": "1406031132"
+            "timestamp": "20170608T0809"
+        },
+        {
+            "firstName": "Jasdev",
+            "lastName": "Sidhu",
+            "profilePic": "../../resources/data/profile_images/trevor_noah.jpeg",
+            "type": "post a message",
+            "title": "",
+            "summary": "I have created a new linkedIn profile to increase my connectivity",
+            "timestamp": "20170605T0809"
+        },
+        {
+            "firstName": "Jasdev",
+            "lastName": "Sidhu",
+            "profilePic": "../../resources/data/profile_images/trevor_noah.jpeg",
+            "type": "post a message",
+            "title": "",
+            "summary": "I have created a new linkedIn profile to increase my connectivity",
+            "timestamp": "20170604T1311"
         }
     ]
 }

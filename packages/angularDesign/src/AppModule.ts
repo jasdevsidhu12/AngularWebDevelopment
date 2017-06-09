@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './trend_design/component/AppComponent';
 import { MainComponent } from './trend_design/component/MainComponent';
+import { FeedService} from './trend_design/service/FeedService';
 import { FeedItem } from './trend_design/component/FeedItem';
 import { FeedItemHeader } from './trend_design/component/FeedItemHeader';
 import { FeedItemBody } from './trend_design/component/FeedItemBody';
@@ -11,6 +12,7 @@ import { FeedItemBody } from './trend_design/component/FeedItemBody';
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule],
   declarations: [AppComponent, MainComponent, FeedItem, FeedItemHeader, FeedItemBody],
+  providers: [FeedService],
   bootstrap: [AppComponent]
 })
 

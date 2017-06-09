@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'feed-item-header',
@@ -7,20 +7,21 @@ import { Component } from '@angular/core';
       <div class="prof-name">
         <div class="prof-wrapper">
           <div class="feed-item-name">
-            Jasdev Sidhu
+            {{ name }}
           </div>
           <div class="feed-item-type">
-            post a message
+            {{ typeOfPost }}
           </div>
         </div>
       </div>
       <div class="timestamp">
-        <div> 12 mins ago </div>
+        <div> {{ timeStamp }} </div>
       </div>
     </div>`
 })
 
 export class FeedItemHeader {
-  app = { title: 'Minimal NgModule', name: 'Jasdev'};
-  color= 'blue';
+  @Input()name: string;
+  @Input()typeOfPost: string;
+  @Input()timeStamp: string;
 };

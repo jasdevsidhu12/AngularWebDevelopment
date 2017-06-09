@@ -1,22 +1,26 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { FeedComponent, FeedService} from '../service/FeedService';
 
 @Component({
   selector: 'main-comp',
   template:
   `<div class="activity-stream-body">
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
-    <feed-item></feed-item>
+    <div *ngFor='let feed of feedComponent'>
+      <feed-item [feed]='feed'></feed-item>
+    </div>
   </div>`
 })
 
 export class MainComponent {
-  app = { title: 'Minimal NgModule', name: 'Jasdev'};
-  color= 'blue';
+  feedComponent: FeedComponent[];
+  constructor(private feedService: FeedService) {}
+  getFeedItems() {
+    this.feedService.getFeedData().subscribe(data => {
+      console.log(data);
+      this.feedComponent = data;
+    });
+  }
+  ngOnInit() {
+    this.getFeedItems();
+  }
 };
