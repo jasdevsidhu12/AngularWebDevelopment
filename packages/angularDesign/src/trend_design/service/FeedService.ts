@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import 'rxjs/add/operator/delay';
 
 export class FeedComponent {
-  constructor(public firstName: string, public lastName: string,
-  public profilePic: string, public type: string, public title: string,
-  public summary: string, public timestamp: string) {}
+  constructor(
+    published: string,
+    actor: any,
+    verb: string,
+    title: string,
+    object: any,
+    target: any,
+    comment: Array<any>){}
 }
 
 @Injectable()
 export class FeedService {
   constructor(private http: Http){}
   getFeedData() {
-    return this.http.get('../../resources/data/activityStream.json').map((response: Response) => {
-      return <FeedComponent []>response.json().news; });
+    return this.http.get('../../resources/data/realActivityStream.json').map((response: Response) => {
+     return response.json().news; });
   }
 }

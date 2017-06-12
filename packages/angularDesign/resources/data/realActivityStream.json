@@ -5,12 +5,11 @@
             "actor": {
                 "url": "",
                 "id": "",
-                "image": "../../resources/data/profile_images/trevor_noah.jpeg",
-                "width": "60",
-                "height": "60"
+                "displayName": "Jasdev Sidhu",
+                "image": "../../resources/data/profile_images/trevor_noah.jpeg"
             },
             "verb": "post",
-            "title": "post a message",
+            "title": "posted a message",
             "object" : {
                 "objectType": "text",
                 "id": "",
@@ -20,19 +19,52 @@
             "target": {
                 "url": "",
                 "objectType": "my-network"
-            }
+            },
+            "comment": [
+                {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                         "url": "../../resources/data/profile_images/john_daisy.jpeg",
+                         "id": "",
+                         "displayName": "John Daisy"
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Congratulations Jasdev for your profile."
+                    }
+                },
+                {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                         "url": "../../resources/data/profile_images/john_daisy.jpeg",
+                         "id": "",
+                         "displayName": "John Daisy"
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Please stay in touch."
+                    }
+                }
+            ]
         },
         {
             "published": "2017-06-09T11:45:55Z",
             "actor": {
                 "url": "",
                 "id": "",
+                "displayName": "Jasdev Sidhu",
                 "image": "../../resources/data/profile_images/trevor_noah.jpeg",
                 "width": "60",
                 "height": "60"
             },
-            "verb": "post",
-            "title": "create a discussion group swat analysis",
+            "verb": "create",
+            "title": "created a discussion group <a href=''>swat analysis</a>",
             "object" : {
                 "objectType": "site",
                 "id": "",
@@ -49,12 +81,13 @@
             "actor": {
                 "url": "",
                 "id": "",
+                "displayName": "Jasdev Sidhu",
                 "image": "../../resources/data/profile_images/trevor_noah.jpeg",
                 "width": "60",
                 "height": "60"
             },
             "verb": "share",
-            "title": "share photos from his documents",
+            "title": "shared photos from his documents",
             "object" : {
                 "objectType": "images",
                 "id": "",
@@ -67,12 +100,29 @@
                     {"objectType": "image", "url": "https://fthmb.tqn.com/ZYZs37huHgXli8dISTc_azBzoX4=/3000x1500/filters:no_upscale():fill(transparent,1)/about/swot-analysis-56a605a75f9b58b7d0df83ce.jpg",
                     "width": "200", "height": "200" }
                 ],
-                "summary": "Hey There <br> please checkout the screenshots from the online last week.<br> Thank you."
+                "summary": "Hey There <br> please checkout the screenshots from the online meeting last week.<br> Thank you."
             },
             "target": {
                 "url": "",
                 "objectType": "my-network"
-            }
+            },
+            "comment": [
+                {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                            "url": "../../resources/data/profile_images/john_daisy.jpeg",
+                            "id": "",
+                            "displayName": "John Daisy"
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Thanks for the images Jasdev."
+                    }
+                }
+            ]
         }
     ]
 }

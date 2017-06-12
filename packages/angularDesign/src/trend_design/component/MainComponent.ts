@@ -5,19 +5,19 @@ import { FeedComponent, FeedService} from '../service/FeedService';
   selector: 'main-comp',
   template:
   `<div class="activity-stream-body">
-    <div *ngFor='let feed of feedComponent'>
+    <div *ngFor='let feed of realFeedComponent'>
       <feed-item [feed]='feed'></feed-item>
     </div>
   </div>`
 })
 
 export class MainComponent {
-  feedComponent: FeedComponent[];
+  realFeedComponent: FeedComponent[];
   constructor(private feedService: FeedService) {}
   getFeedItems() {
     this.feedService.getFeedData().subscribe(data => {
       console.log(data);
-      this.feedComponent = data;
+      this.realFeedComponent = data;
     });
   }
   ngOnInit() {

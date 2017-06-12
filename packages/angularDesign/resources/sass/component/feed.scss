@@ -8,22 +8,25 @@ $width: 440px;
   display: flex;
   flex-direction: row;
   flex: 1;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   flex-wrap: wrap;
   padding-top: 10px;
 }
 @mixin feed-item-wrapper {
-  //border: solid black 1px;
   margin-left: 30px;
   margin-bottom: 20px;
 }
 @mixin feed-item-container {
+  // border: solid black 1px;
   margin-left: 10px;
+  display: flex;
+  flex-direction: column;
   width: $width;
-  min-height: $minHeight;
+  // min-height: $minHeight;
   background-color: #f2f2f2;
   box-shadow: 5px 5px 2px #888888;
   .feed-item-prof-name {
+    flex: 1;
     height: 50px;
     div.prof-name {
       width: $width * 2/3;
@@ -52,8 +55,56 @@ $width: 440px;
     }
   }
   .feed-item-body {
-    padding: 10px;
-    font-size: 14px;
+    flex: 1;
+    min-height: 150px;
+    .feed-item-body-header {
+      margin-top: 10px;
+      padding: 0px 10px 0px 10px;
+      background-color: #B1AEAE;
+      .feed-item-body-media {
+        outline: none;
+        .carousel-indicators {
+          display: none;
+        }
+        img {
+          height: 370px;
+          width: 420px;
+        }
+      }
+    }
+   .feed-item-body-content {
+      padding: 10px 10px 70px 10px;
+      font-size: 14px;
+    } 
+  }
+  .feed-item-tail {
+    flex: 1;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    a:hover {
+      cursor: hand;
+    }
+    .anchor-comment {
+      color: blue;
+    }
+    .comment-body {
+      float: left;
+      .comment-body-left {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float: left;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+        .comment-body-content, .comment-body-name {
+          padding-left: 10px;
+          max-width: 300px;
+        }
+      }
+    }
   }
 }
 
@@ -64,6 +115,7 @@ $width: 440px;
   margin-top: -10px;
   margin-left: -20px;
   border-radius: 50%;
+  z-index: 1;
 }
 
 @mixin feed-item-style {

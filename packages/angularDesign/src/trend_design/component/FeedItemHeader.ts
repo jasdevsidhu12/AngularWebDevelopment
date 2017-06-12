@@ -9,8 +9,7 @@ import { Component, Input } from '@angular/core';
           <div class="feed-item-name">
             {{ name }}
           </div>
-          <div class="feed-item-type">
-            {{ typeOfPost }}
+          <div class="feed-item-type" [innerHTML]="typeOfPost">
           </div>
         </div>
       </div>

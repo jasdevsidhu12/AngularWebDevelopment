@@ -9,8 +9,10 @@ import * as moment from 'moment';
     <div  class="feed-item">
       <feed-item-header [name]='fullName' [typeOfPost]='typeOfPost' [timeStamp]='timeStamp'>
       </feed-item-header>
-      <feed-item-body [summary]='summary'>
+      <feed-item-body [object]='object'>
       </feed-item-body>
+      <feed-item-tail [comment]='comment'>
+      </feed-item-tail>
     </div>
    </div>
   `
@@ -21,13 +23,16 @@ export class FeedItem {
   profilePicUrl: string;
   fullName: string;
   typeOfPost: string;
-  summary: string;
+  object: any;
   timeStamp: string;
+  comment: Array<any>;
   ngOnInit() {
-    this.fullName = this.feed.firstName + " " + this.feed.lastName;
-    this.typeOfPost = this.feed.type;
-    this.summary = this.feed.summary;
-    this.profilePicUrl = this.feed.profilePic;
-    this.timeStamp = moment(this.feed.timestamp).startOf('day').fromNow();
+    console.log(this.feed);
+    this.fullName = this.feed.actor.displayName;
+    this.profilePicUrl = this.feed.actor.image;
+    this.typeOfPost = this.feed.title;
+    this.object = this.feed.object;
+    this.timeStamp = moment(this.feed.published).startOf('day').fromNow();
+    this.comment = this.feed.comment;
   }
 };

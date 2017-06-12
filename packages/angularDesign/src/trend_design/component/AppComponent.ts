@@ -7,6 +7,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   template: `<main-comp></main-comp>`
 })
 export class AppComponent {
-  app = { title: 'Minimal NgModule', name: 'Jasdev'};
-  color= 'blue';
 };
