@@ -13,5 +13,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "rootDir": "./src",
     "outDir": "./lib"
-  }
+  },
+  "exclude": [
+    "test"
+  ]
 }
