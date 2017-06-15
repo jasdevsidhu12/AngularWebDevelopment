@@ -9,7 +9,7 @@ import * as moment from 'moment';
     <div  class="feed-item">
       <feed-item-header [name]='fullName' [typeOfPost]='typeOfPost' [timeStamp]='timeStamp'>
       </feed-item-header>
-      <feed-item-body [object]='object'>
+      <feed-item-body [FeedObject]='object'>
       </feed-item-body>
       <feed-item-tail [comment]='comment'>
       </feed-item-tail>
