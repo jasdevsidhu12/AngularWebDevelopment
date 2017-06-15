@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "typings install dt~jasmine --save --global",
     "test": "karma start karma.config.js",
     "start": "webpack-dev-server",
-    "build": "webpack",
-    "tyjasmine": "typings install dt~jasmine --save --global"
+    "build": "webpack"
   },
   "dependencies": {
     "@angular/common": "^4.1.3",
