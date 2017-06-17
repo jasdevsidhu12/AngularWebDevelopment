@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "typings install dt~jasmine --save --global && webdriver-manager update",
-    "test": "karma start karma.config.js && protractor protractor.conf.js",
+    "test": "karma start karma.config.js",
     "e2e": "protractor protractor.conf.js",
     "start": "webpack-dev-server",
     "build": "webpack"

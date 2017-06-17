@@ -31,8 +31,7 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: [{loader: 'awesome-typescript-loader',
-        options: { tsconfig:  __dirname + '/tsconfig.json' } } , 'angular2-template-loader'],
-        exclude: 'node_modules'
+        options: { tsconfig:  __dirname + '/tsconfig.json' } } , 'angular2-template-loader']
       },
       {
         test: /\.scss$/,
