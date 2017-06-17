@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "typings install dt~jasmine --save --global",
-    "test": "karma start karma.config.js",
+    "postinstall": "typings install dt~jasmine --save --global && webdriver-manager update",
+    "test": "karma start karma.config.js && protractor protractor.conf.js",
+    "e2e": "protractor protractor.conf.js",
     "start": "webpack-dev-server",
     "build": "webpack"
   },
@@ -31,6 +32,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.52",
     "@types/node": "^7.0.14",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.0-beta.18",
@@ -47,6 +49,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-webpack": "^2.0.3",
     "node-sass": "^4.5.2",
+    "protractor": "5.1.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
     "sass-loader": "^6.0.3",
