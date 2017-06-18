@@ -86,7 +86,7 @@ module.exports = function(config) {
         browsers: ['chrome_headless'], // browsers: ['Chrome'] or ['PhantomJS'] or ['chrome_headless']
         customLaunchers: {
             chrome_headless: {
-                base: 'Chrome',
+                base: process.env.GOOGLE_CHROME_BINARY,
                 flags: ['--headless', '--disable-gpu', '--window-size=800x600']
             }
         },
