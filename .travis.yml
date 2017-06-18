@@ -1,12 +1,11 @@
 dist: trusty
 sudo: false
-addons:
-    apt:
-        packages:
-            - google-chrome-stable
+# addons:
+#     apt:
+#         packages:
+#             - google-chrome-stable
 before_script:
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start &
+    - google-chrome-stable --headless --disable-gpu
     - sleep 3
     - npm install -g phantomjs-prebuilt; npm install -g protractor@5.1.2; webdriver-manager update
 script: "sh ./runtest.sh"
