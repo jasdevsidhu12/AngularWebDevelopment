@@ -4,9 +4,11 @@ sudo: false
 #     apt:
 #         packages:
 #             - google-chrome-stable
+addons:
+    chrome: stable
 before_script:
-    - google-chrome-stable --headless --disable-gpu
-    - sleep 3
+    # - google-chrome-stable --headless --disable-gpu
+    # - sleep 3
     - npm install -g phantomjs-prebuilt; npm install -g protractor@5.1.2; webdriver-manager update
 script: "sh ./runtest.sh"
 language: node_js
