@@ -6,8 +6,8 @@ addons:
             - google-chrome
         packages:
             - google-chrome-beta
-# before_install:
-#     - google-chrome-stable --headless --no-sandbox
+before_install:
+    - google-chrome-stable --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 http://localhost
 # addons:
 #     chrome: stable
 before_script:
@@ -15,7 +15,7 @@ before_script:
     # - sh -e /etc/init.d/xvfb start &
     # - google-chrome-stable --headless --no-sandbox
     # - sleep 3
-script: "sh ./runtest.sh"
+#script: "sh ./runtest.sh"
 language: node_js
 node_js: 
     - "6.3.0"
