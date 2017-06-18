@@ -1,0 +1,6 @@
+before_scripts:
+    - npm install -g phantomjs-prebuilt; npm install -g protractor@5.1.2; webdriver-manager update
+scripts: "sh ./runtest.sh"
+language: node_js
+node_js: 
+    - "6.3.0"
