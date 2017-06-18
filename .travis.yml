@@ -6,8 +6,8 @@ addons:
             - google-chrome
         packages:
             - google-chrome-beta
-before_install:
-    - google-chrome-stable --headless --no-sandbox
+# before_install:
+#     - google-chrome-stable --headless --no-sandbox
 # addons:
 #     chrome: stable
 before_script:
