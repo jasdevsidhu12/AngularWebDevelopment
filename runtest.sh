@@ -4,7 +4,7 @@ echo "---------INSTALLING DEPENDENCIES------------------------------"
 npm install
 echo "---------RUNNING UNIT TEST------------------------------"
 npm run test
-echo "---------STARTING DEVELOPMENT SERVER------------------------------"
-npm start
-echo "---------RUNNING E2E TEST------------------------------"
-npm run e2e
+# echo "---------STARTING DEVELOPMENT SERVER------------------------------"
+# npm start
+# echo "---------RUNNING E2E TEST------------------------------"
+# npm run e2e
