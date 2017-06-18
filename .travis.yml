@@ -7,7 +7,7 @@ sudo: false
 addons:
     chrome: stable
 before_script:
-    # - google-chrome-stable --headless --disable-gpu
+    - google-chrome-stable --headless --no-sandbox
     # - sleep 3
     - npm install -g phantomjs-prebuilt; npm install -g protractor@5.1.2; webdriver-manager update
 script: "sh ./runtest.sh"
