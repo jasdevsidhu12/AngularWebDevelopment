@@ -1,3 +1,7 @@
+echo "---------------INSTALLING PROTRACTOR AND PHANTOMJS--------------------"
+npm install phantomjs-prebuilt
+npm install protractor@5.1.2
+webdriver-manager update
 echo "---------Going to angularDesign package------------------------------"
 cd ./packages/angularDesign
 echo "---------INSTALLING DEPENDENCIES------------------------------"
