@@ -83,11 +83,11 @@ module.exports = function(config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: [process.env.GOOGLE_CHROME_BINARY], // browsers: ['Chrome'] or ['PhantomJS'] or ['chrome_headless']
+        browsers: ['chrome_headless'], // browsers: ['Chrome'] or ['PhantomJS'] or ['chrome_headless']
         customLaunchers: {
             chrome_headless: {
                 base: 'Chrome',
-                flags: ['--headless', '--disable-gpu', '--window-size=800x600']
+                flags: ['--headless', '--disable-gpu']
             }
         },
         singleRun: true
