@@ -83,7 +83,7 @@ module.exports = function(config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['chrome_headless'], // browsers: ['Chrome'] or ['PhantomJS'] or ['chrome_headless']
+        browsers: ['ChromeHeadless'], // browsers: ['Chrome'] or ['PhantomJS'] or ['chrome_headless']
         customLaunchers: {
             chrome_headless: {
                 base: 'Chrome',
