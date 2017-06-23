@@ -1,0 +1,8 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  div.activity-stream-body {
+    @include body-activity-stream;
+    @include feed-item-style;
+  }
+}

@@ -7,7 +7,7 @@
     "test": "karma start karma.conf.js",
     "e2e": "protractor protractor.conf.js",
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack -p"
   },
   "dependencies": {
     "@angular/common": "^4.1.3",

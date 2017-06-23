@@ -1,0 +1,128 @@
+{
+    "news" : [
+        {
+            "published": "2017-06-09T10:45:55Z",
+            "actor": {
+                "url": "",
+                "id": "",
+                "displayName": "Jasdev Sidhu",
+                "image": "../../resources/data/profile_images/trevor_noah.jpeg"
+            },
+            "verb": "post",
+            "title": "posted a message",
+            "object" : {
+                "objectType": "text",
+                "id": "",
+                "url": "",
+                "summary": "I have created a new linkedIn profile to increase my connectivity"
+            },
+            "target": {
+                "url": "",
+                "objectType": "my-network"
+            },
+            "comment": [
+                {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                         "url": "../../resources/data/profile_images/john_daisy.jpeg",
+                         "id": "",
+                         "displayName": "John Daisy"
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Congratulations Jasdev for your profile."
+                    }
+                },
+                {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                         "url": "../../resources/data/profile_images/john_daisy.jpeg",
+                         "id": "",
+                         "displayName": "John Daisy"
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Please stay in touch."
+                    }
+                }
+            ]
+        },
+        {
+            "published": "2017-06-09T11:45:55Z",
+            "actor": {
+                "url": "",
+                "id": "",
+                "displayName": "Jasdev Sidhu",
+                "image": "../../resources/data/profile_images/trevor_noah.jpeg",
+                "width": "60",
+                "height": "60"
+            },
+            "verb": "create",
+            "title": "created a discussion group <a href=''>swat analysis</a>",
+            "object" : {
+                "objectType": "site",
+                "id": "",
+                "url": "",
+                "summary": "Hey There <br> please join the discussion as soon as possible.<br> Thank you."
+            },
+            "target": {
+                "url": "",
+                "objectType": "my-network"
+            }
+        },
+        {
+            "published": "2017-06-09T12:45:55Z",
+            "actor": {
+                "url": "",
+                "id": "",
+                "displayName": "Jasdev Sidhu",
+                "image": "../../resources/data/profile_images/trevor_noah.jpeg",
+                "width": "60",
+                "height": "60"
+            },
+            "verb": "share",
+            "title": "shared photos from his documents",
+            "object" : {
+                "objectType": "images",
+                "id": "",
+                "url": "",
+                "attachments": [
+                    {"objectType": "image", "url": "https://www.projectsmart.co.uk/img/swot-analysis.png",
+                    "width": "200", "height": "200" },
+                    {"objectType": "image", "url": "http://hs-site-ikblelwn7n3cbuq.netdna-ssl.com/wp-content/uploads/Healthcare-SWOT-Analysis-1.jpg",
+                    "width": "200", "height": "200" },
+                    {"objectType": "image", "url": "https://fthmb.tqn.com/ZYZs37huHgXli8dISTc_azBzoX4=/3000x1500/filters:no_upscale():fill(transparent,1)/about/swot-analysis-56a605a75f9b58b7d0df83ce.jpg",
+                    "width": "200", "height": "200" }
+                ],
+                "summary": "Hey There <br> please checkout the screenshots from the online meeting last week.<br> Thank you."
+            },
+            "target": {
+                "url": "",
+                "objectType": "my-network"
+            },
+            "comment": [
+                {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                            "url": "../../resources/data/profile_images/john_daisy.jpeg",
+                            "id": "",
+                            "displayName": "John Daisy"
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Thanks for the images Jasdev."
+                    }
+                }
+            ]
+        }
+    ]
+}

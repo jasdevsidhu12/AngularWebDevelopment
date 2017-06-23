@@ -1,0 +1,15 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "It's a node server to run js file",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jasdev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.15.3"
+  }
+}
