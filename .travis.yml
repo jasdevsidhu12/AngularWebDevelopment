@@ -16,3 +16,10 @@ script: "sh ./runtest.sh"
 language: node_js
 node_js: 
     - "6.3.0"
+
+deploy:
+    provider: s3
+    access_key_id: AKIAINM6CO4OYRVHMFXQ
+    secret_access_key: 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
+    bucket: "nodeserverangular"
+    skip_cleanup: true
