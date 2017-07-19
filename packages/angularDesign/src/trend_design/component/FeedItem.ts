@@ -28,11 +28,13 @@ export class FeedItem {
   comment: Array<any>;
   ngOnInit() {
     console.log(this.feed);
-    this.fullName = this.feed.actor.displayName;
-    this.profilePicUrl = this.feed.actor.image;
-    this.typeOfPost = this.feed.title;
-    this.object = this.feed.object;
-    this.timeStamp = moment(this.feed.published).startOf('day').fromNow();
-    this.comment = this.feed.comment;
+    if (this.feed) {
+      this.fullName = this.feed.actor.displayName;
+      this.profilePicUrl = this.feed.actor.image;
+      this.typeOfPost = this.feed.title;
+      this.object = this.feed.object;
+      this.timeStamp = moment(this.feed.published).startOf('day').fromNow();
+      this.comment = this.feed.comment;
+    }
   }
 };

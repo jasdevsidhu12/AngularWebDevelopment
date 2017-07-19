@@ -1,4 +1,4 @@
-$minHeight: 245px;
+$minHeight: 200px;
 $width: 440px;
 
 @mixin body-activity-stream {
@@ -16,15 +16,18 @@ $width: 440px;
   margin-left: 30px;
   margin-bottom: 20px;
 }
-@mixin feed-item-container {
-  // border: solid black 1px;
+@mixin feed-item-creator {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   width: $width;
-  // min-height: $minHeight;
   background-color: #f2f2f2;
   box-shadow: 5px 5px 2px #888888;
+}
+@mixin feed-item-container {
+  // border: solid black 1px;
+  // min-height: $minHeight;
+  @include feed-item-creator;
   .feed-item-prof-name {
     flex: 1;
     height: 50px;
@@ -127,5 +130,9 @@ $width: 440px;
     .feed-item {
       @include feed-item-container;
     }
+  }
+  .feed-creator {
+    @include feed-item-container;
+    min-height: $minHeight;
   }
 }

@@ -87,7 +87,7 @@
                 "height": "60"
             },
             "verb": "share",
-            "title": "shared photos from his documents",
+            "title": "shared images from his document",
             "object" : {
                 "objectType": "images",
                 "id": "",

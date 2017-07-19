@@ -12,11 +12,12 @@ import { FeedItemBody } from './trend_design/component/FeedItemBody';
 import { FeedItemBodyMedia } from './trend_design/component/FeedItemBodyMedia';
 import { FeedItemTail } from './trend_design/component/FeedItemTail';
 import { FeedItemTailComment } from './trend_design/component/FeedItemTailComment';
+import { FeedCreator } from './trend_design/component/FeedCreator';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule, NgbModule.forRoot()],
   declarations: [AppComponent, MainComponent, FeedItem, FeedItemHeader, FeedItemBody, FeedItemBodyMedia, FeedItemTail,
-  FeedItemTailComment],
+  FeedItemTailComment, FeedCreator],
   providers: [FeedService],
   bootstrap: [AppComponent]
 })
