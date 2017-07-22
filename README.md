@@ -1,8 +1,25 @@
+## Angular Web Development [Work In Progress]
+
+The idea of this project is to create prototype of 'My Feed' just like facebook's News Feed view using ActivityStream2.0 data representation and Angular 2.0 framework. Also included in this project is the unit(Jasmine, angular-testing-utilities) and end-to-end(protractor) test frameworks to run the respective unit and end-to-end test cases.
+
+## Author
+Jasdev Sidhu
+
+## Badge
 [![Build Status](https://travis-ci.org/jasdevsidhu12/AngularWebDevelopment.svg?branch=master)](https://travis-ci.org/jasdevsidhu12/AngularWebDevelopment)
 
-Prerequisites <br>
-My Angular Projects
-global dependency <br>
+## Prerequisites and Run the Project
+
+### Global Dependency (must install)
 npm install -g phantomjs-prebuilt <br>
 npm install -g protractor@5.1.2 <br>
 webdriver-manager update
+
+### Project Dependency
+cd ./packages/angularDesign <br >
+npm install <br >
+
+### Run the Project
+npm start <br >
+http://localhost:8080/
+
