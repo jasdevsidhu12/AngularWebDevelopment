@@ -12,10 +12,13 @@ import * as moment from 'moment';
             </a>
         </b>
     </div>
-    <div *ngIf="!comment" class='comment-link'>
-        <b>Comments</b>
+    <div *ngIf="!comment">
+        <a (click)="commentClickEvent($event)" class="comment-link">
+            <b>Comments</b>
+        </a>
     </div>
-    <div *ngIf="comment && showComment" class="feed-comment-wrapper">
+    <div *ngIf="showComment" class="feed-comment-wrapper">
+        <b>Hello World</b>
         <div *ngFor='let comm of comment'>
             <feed-item-tail-comment [imgUrl]="comm.actor.url" [name]="comm.actor.displayName"
             [timestamp]="convertToMoment(comm.published)"
@@ -40,6 +43,6 @@ export class FeedItemTail {
         this.showComment = this.showComment ? false : true;
     }
     convertToMoment(date: string){
-        return moment(date).startOf('day').fromNow();
+        return moment(date).fromNow();
     }
 }

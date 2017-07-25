@@ -1,6 +1,6 @@
 ## Angular Web Development [Work In Progress]
 
-The idea of this project is to create prototype of 'My Feed' just like facebook's News Feed view using ActivityStream2.0 data representation and Angular 2.0 framework. Also included in this project is the unit(Jasmine, angular-testing-utilities) and end-to-end(protractor) test frameworks to run the respective unit and end-to-end test cases.
+The idea of this project(packages/angularDesign/trend_design) is to create prototype of 'My Feed' just like facebook's News Feed view using ActivityStream2.0 data representation and Angular 2.0 framework. Also included in this project is the unit(Jasmine, angular-testing-utilities) and end-to-end(protractor) test frameworks to run the respective unit and end-to-end test cases.
 
 ## Author
 Jasdev Sidhu
@@ -10,8 +10,7 @@ Jasdev Sidhu
 
 ## Prerequisites and Run the Project
 
-### Global Dependency (must install)
-npm install -g phantomjs-prebuilt <br>
+### Global Dependency (install to run e2e test)
 npm install -g protractor@5.1.2 <br>
 webdriver-manager update
 
@@ -22,4 +21,10 @@ npm install <br >
 ### Run the Project
 npm start <br >
 http://localhost:8080/
+
+### Run unit test
+npm test
+
+### Run e2e
+npm run e2e
 
