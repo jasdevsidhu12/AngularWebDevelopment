@@ -9,8 +9,7 @@ import { Component, Input } from '@angular/core';
       <feed-item-body-media [attachments]="FeedObject.attachments">
       </feed-item-body-media>
     </section>
-    <div class="feed-item-body-content">
-      <div [innerHTML]="FeedObject.summary"></div>
+    <div class="feed-item-body-content" [innerHTML]="FeedObject.summary">
     </div>
   </div>
   `

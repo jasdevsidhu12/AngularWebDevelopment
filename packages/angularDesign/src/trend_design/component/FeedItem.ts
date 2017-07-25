@@ -33,7 +33,7 @@ export class FeedItem {
       this.profilePicUrl = this.feed.actor.image;
       this.typeOfPost = this.feed.title;
       this.object = this.feed.object;
-      this.timeStamp = moment(this.feed.published).startOf('day').fromNow();
+      this.timeStamp = moment(this.feed.published).fromNow();
       this.comment = this.feed.comment;
     }
   }

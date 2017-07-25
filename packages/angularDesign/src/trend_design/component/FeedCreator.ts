@@ -1,24 +1,42 @@
 import { Component, EventEmitter, ViewChild, ElementRef, Output } from '@angular/core';
+import UploadMediaAPI from '../api/UploadMediaAPI';
 
 @Component({
     selector: 'feed-creator',
     template: `<div class="feed-creator">
-                <input #uploadFile type="file" multiple />
+                <input #discusionGroupName class="feed-dis-group-input"
+                type="text" placeholder="create a new discussion group" />
+                <span> or / and </span>
                 <textarea #myMessage [(ngModel)]="feedMessage" type="text"
-                    placeholder="Anything to Share">
+                    placeholder="post a message to your colleagues">
                 </textarea>
-                <button (click)="postItem($event)">Post</button>
+                <div class="feed-btn-panel">
+                    <div>
+                        <label for="file-upload" #labelForUpload class="feed-btn-ui upload-btn">
+                            Upload Images
+                        </label>
+                        <input #uploadFile id="file-upload" type="file" accept='image/*' multiple/>
+                    </div>
+                    <div>
+                        <label class="feed-btn-ui" (click)="postItem($event)">Post</label>
+                    </div>
                </div>`
 })
 
 export class FeedCreator {
     constructor(private elRef:ElementRef) {}
+
     @ViewChild('myMessage') myMessage: any;
     @ViewChild('uploadFile') uploadFile: any;
+    @ViewChild('labelForUpload') labelForUpload: any;
+    @ViewChild('discusionGroupName') disGrpName: any;
     @Output() postNewItem = new EventEmitter();
-    feedMessage: HTMLTextAreaElement;
+    uploadMedia = new UploadMediaAPI();
     feedMessageJson: any;
     
+    ngOnInit() {
+        this.uploadMedia.setMediaObject(this.uploadFile, this.labelForUpload);
+    }
     postItem(event: UIEvent) {
         this.feedMessageJson = new Object();
         this.feedMessageJson = {
@@ -37,52 +55,30 @@ export class FeedCreator {
                 "summary": ""
             }
         };
-        this.uploadFilefunc().then(() => {
-            if(this.feedMessage.innerText !== '') {
+        this.uploadMedia.setMediatoFeed(this.feedMessageJson).then((isMediaSetToFeed) => {
+            this.checkAndSetDiscussionGroup();
+            if (this.myMessage.nativeElement.value.toString() !== '') {
                 this.feedMessageJson.object.summary =
                 this.myMessage.nativeElement.value.replace('\n',"<br />");
+                this.feedMessageJson.published = new Date().toISOString();
+                this.postNewItem.emit(this.feedMessageJson);
+            } else if (isMediaSetToFeed) {
+                 this.feedMessageJson.published = new Date().toISOString();
                 this.postNewItem.emit(this.feedMessageJson);
             }
+            this.clearFeedCreatorInputs();
         });
     }
-    uploadFilefunc() {
-        return new Promise((resolve) => {
-            const domElem = this.uploadFile.nativeElement;
-            if (domElem.files[0]) {
-                this.feedMessageJson.object['attachments'] = [];
-                this.loopMultipleFiles(domElem.files).then(() => {
-                    resolve(true);
-                });
-            }
-            resolve(true);
-        });
+    checkAndSetDiscussionGroup() {
+        const disGrpName = this.disGrpName.nativeElement.value;
+        if(disGrpName !== '') {
+            this.feedMessageJson.title =
+            'created a discussion group <a href>' + disGrpName + '</a>';
+        }
     }
-    loopMultipleFiles(files: Array<any>, count=0) {
-        return new Promise((resolve) => {
-            if (count < files.length) {
-                this.convertFiletoUrl(files[count]).then(() => {
-                    count++;
-                    this.loopMultipleFiles(files, count);
-                    resolve(true);
-                });
-            } else {
-                resolve(true);
-            }
-        });
-    }
-    convertFiletoUrl(files: any) {
-        return new Promise((resolve) => {
-            const fileReader = new FileReader();
-            fileReader.onloadend = (fsevent) => {
-                this.feedMessageJson.object.attachments.push({
-                    "objectType": "image",
-                    "url": fileReader.result,
-                    "width": "200",
-                    "height": "200"
-                });
-                resolve(true);
-            }
-            fileReader.readAsDataURL(files);
-        });
+    clearFeedCreatorInputs() {
+        this.disGrpName.nativeElement.value = '';
+        this.labelForUpload.nativeElement.innerText = 'Upload Images';
+        this.myMessage.nativeElement.value = '';
     }
 }
