@@ -11,7 +11,7 @@ import * as moment from 'moment';
       </feed-item-header>
       <feed-item-body [FeedObject]='object'>
       </feed-item-body>
-      <feed-item-tail [comment]='comment'>
+      <feed-item-tail [comment]='comment' [fullName]='fullName' [profilePicUrl]='profilePicUrl'>
       </feed-item-tail>
     </div>
    </div>

@@ -106,6 +106,15 @@ $width: 440px;
         .comment-body-content, .comment-body-name {
           padding-left: 10px;
           max-width: 300px;
+          input {
+            border: none;
+            border-bottom: solid black 1px;
+            background: transparent;
+            width: 350px;
+            &:focus {
+              outline: none;
+            }
+          }
         }
       }
     }
