@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
                 </div>
                 <div class="comment-body-left">
                     <div class="comment-body-name">
-                        <b> {{ name }} </b>
+                        <b> {{ name }} {{ counter$ }}</b>
                         <button>Post</button>
                     </div>
                     <div class="comment-body-content">

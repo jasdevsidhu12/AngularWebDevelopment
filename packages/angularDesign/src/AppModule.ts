@@ -14,13 +14,21 @@ import { FeedItemTail } from './trend_design/component/FeedItemTail';
 import { FeedItemTailComment } from './trend_design/component/FeedItemTailComment';
 import { FeedCreator } from './trend_design/component/FeedCreator';
 import { FeedCommentCreator } from './trend_design/component/FeedCommentCreator';
+//redux
+import { NgRedux, NgReduxModule } from 'ng2-redux';
+import { IAppState } from './trend_design/store/store'
+import feedItemReducer from './trend_design/reducer/FIReducer';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, HttpModule, NgbModule.forRoot()],
+  imports: [BrowserModule, FormsModule, HttpModule, NgbModule.forRoot(), NgReduxModule],
   declarations: [AppComponent, MainComponent, FeedItem, FeedItemHeader,FeedItemBody, FeedItemBodyMedia, FeedItemTail,
   FeedItemTailComment, FeedCreator, FeedCommentCreator],
   providers: [FeedService],
   bootstrap: [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>) {
+    ngRedux.configureStore(feedItemReducer, { counter: 0 });
+  }
+}
