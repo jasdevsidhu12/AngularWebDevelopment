@@ -29,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.(ts)$/,
         loaders: [{loader: 'awesome-typescript-loader',
         options: { tsconfig:  __dirname + '/tsconfig.json' } } , 'angular2-template-loader']
       },

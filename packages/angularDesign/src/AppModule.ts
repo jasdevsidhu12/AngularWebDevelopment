@@ -16,8 +16,12 @@ import { FeedCreator } from './trend_design/component/FeedCreator';
 import { FeedCommentCreator } from './trend_design/component/FeedCommentCreator';
 //redux
 import { NgRedux, NgReduxModule } from 'ng2-redux';
-import { IAppState } from './trend_design/store/store'
+import { IAppState } from './trend_design/reducer/FIReducer';
 import feedItemReducer from './trend_design/reducer/FIReducer';
+import { configureStore } from './trend_design/store/store';
+import { Store } from 'redux';
+
+const store: Store<IAppState> = configureStore();
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule, NgbModule.forRoot(), NgReduxModule],
@@ -29,6 +33,6 @@ import feedItemReducer from './trend_design/reducer/FIReducer';
 
 export class AppModule {
   constructor(ngRedux: NgRedux<IAppState>) {
-    ngRedux.configureStore(feedItemReducer, { counter: 0 });
+    ngRedux.provideStore(store);
   }
 }

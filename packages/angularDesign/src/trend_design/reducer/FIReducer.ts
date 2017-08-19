@@ -1,7 +1,11 @@
 import { ADD_NEW_COMMENT } from '../api/FIUtils';
-import { IAppState } from '../store/store';
 
-export default function feedItemReducer(state: IAppState, payload:any): IAppState {
+export interface IAppState {
+    counter: number;
+};
+const initialState = { counter: 0 };
+
+export default function feedItemReducer(state: IAppState = initialState, payload:any): IAppState {
     console.log('=====State=======');
     console.log(state);
     console.log('=====Payload=======');

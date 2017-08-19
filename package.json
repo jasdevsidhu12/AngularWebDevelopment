@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/jasdevsidhu12/AngularWebDevelopment/issues"
   },
-  "homepage": "https://github.com/jasdevsidhu12/AngularWebDevelopment#readme"
+  "homepage": "https://github.com/jasdevsidhu12/AngularWebDevelopment#readme",
+  "dependencies": {}
 }
