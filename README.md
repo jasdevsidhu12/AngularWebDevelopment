@@ -6,7 +6,7 @@ The idea of this project(packages/angularDesign/trend_design) is to create proto
 Jasdev Sidhu
 
 ## Badge
-[![Build Status](https://travis-ci.org/jasdevsidhu12/AngularWebDevelopment.svg?branch=master)](https://travis-ci.org/jasdevsidhu12/AngularWebDevelopment)
+[![Build Status](https://travis-ci.org/jasdevsidhu12/FeedService.svg?branch=master)](https://travis-ci.org/jasdevsidhu12/FeedService)
 
 ## Prerequisites and Run the Project
 
