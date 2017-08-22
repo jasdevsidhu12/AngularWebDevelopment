@@ -1,19 +1,39 @@
-import { ADD_NEW_COMMENT } from '../api/FIUtils';
+import {
+    ADD_NEW_COMMENT,
+    ADD_NEW_FEED,
+    LOAD_INITIAL_FEED,
+    LOADING_COMPONENTS
+} from '../api/FIUtils';
 
 export interface IAppState {
-    counter: number;
+    feed: Array<any>;
+    isContentLoading: boolean
 };
-const initialState = { counter: 0 };
+const initialState = { feed: [{}], isContentLoading: true };
 
 export default function feedItemReducer(state: IAppState = initialState, payload:any): IAppState {
-    console.log('=====State=======');
-    console.log(state);
-    console.log('=====Payload=======');
-    console.log(payload);
     let newState: IAppState;
     switch(payload.type) {
+        case ADD_NEW_FEED:
+        const feed = [...state.feed ];
+        feed.unshift(payload.action);
+        newState = { ...state, feed };
+        break;
         case ADD_NEW_COMMENT:
-        newState = { ...state, counter: state.counter + 1 }; break;
+        const feedArray = [...state.feed];
+        feedArray.forEach((obj: any) => {
+            if (obj.id === payload.action.id) {
+                obj.comment.unshift(payload.action.comment);
+            }
+        });
+        newState = { ...state, feed: feedArray };
+        break;
+        case LOAD_INITIAL_FEED:
+        newState = { ...state, feed: payload.action, isContentLoading: false };
+        break
+        case LOADING_COMPONENTS:
+        newState = { ...state, isContentLoading: true }; 
+        break;
         default: newState = state; break;
     }
     return newState;

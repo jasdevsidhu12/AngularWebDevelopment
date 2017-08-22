@@ -1,6 +1,7 @@
 {
     "news" : [
         {
+            "id": 1,
             "published": "2017-06-09T10:45:55Z",
             "actor": {
                 "url": "",
@@ -54,6 +55,7 @@
             ]
         },
         {
+            "id": 2,
             "published": "2017-06-09T11:45:55Z",
             "actor": {
                 "url": "",
@@ -74,9 +76,11 @@
             "target": {
                 "url": "",
                 "objectType": "my-network"
-            }
+            },
+            "comment": []
         },
         {
+            "id": 3,
             "published": "2017-06-09T12:45:55Z",
             "actor": {
                 "url": "",

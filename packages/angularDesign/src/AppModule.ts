@@ -20,6 +20,7 @@ import { IAppState } from './trend_design/reducer/FIReducer';
 import feedItemReducer from './trend_design/reducer/FIReducer';
 import { configureStore } from './trend_design/store/store';
 import { Store } from 'redux';
+import { FIAction } from './trend_design/action/FIAction';
 
 const store: Store<IAppState> = configureStore();
 
@@ -27,7 +28,7 @@ const store: Store<IAppState> = configureStore();
   imports: [BrowserModule, FormsModule, HttpModule, NgbModule.forRoot(), NgReduxModule],
   declarations: [AppComponent, MainComponent, FeedItem, FeedItemHeader,FeedItemBody, FeedItemBodyMedia, FeedItemTail,
   FeedItemTailComment, FeedCreator, FeedCommentCreator],
-  providers: [FeedService],
+  providers: [FeedService, FIAction],
   bootstrap: [AppComponent]
 })
 

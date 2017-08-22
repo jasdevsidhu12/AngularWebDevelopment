@@ -1,31 +1,45 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FeedComponent, FeedService} from '../service/FeedService';
+import { NgRedux, select } from 'ng2-redux';
+import  { IAppState } from '../reducer/FIReducer'
+import { FIAction } from '../action/FIAction';
+import { Observable } from 'rxjs';
+import { configureStore } from '../store/store';
 
 @Component({
   selector: 'main-comp',
   template:
-  `<div class="activity-stream-body">
-    <feed-creator (postNewItem) ="postNewItem($event)"></feed-creator>
-    <div *ngFor='let feed of realFeedComponent'>
-      <feed-item [feed]='feed'></feed-item>
+  `<div>
+    <div *ngIf='isLoadingComponent'>
+      Loading componets .................
+    </div>
+    <div *ngIf='!isLoadingComponent' class="activity-stream-body">
+      <feed-creator (postNewItem)="postNewItem($event)"
+      feedLength="{{ realFeedComponent.length }}">
+      </feed-creator>
+      <div *ngFor='let feed of realFeedComponent'>
+        <feed-item [feed]='feed'></feed-item>
+      </div>
     </div>
   </div>`
 })
 
 export class MainComponent {
-  realFeedComponent: FeedComponent[];
-  constructor(private feedService: FeedService) {}
-  getFeedItems() {
-    this.feedService.getFeedData().subscribe(data => {
-      console.log(data);
-      this.realFeedComponent = data;
-    });
-  }
+  realFeedComponent: Array<any>;
+  isLoadingComponent: boolean;
+
+  constructor(private ngRedux: NgRedux<IAppState>, private fIAction: FIAction) {}
+  
   ngOnInit() {
-    this.getFeedItems();
+    this.ngRedux.subscribe(() => {
+      this.updateState();
+    });
+    this.fIAction.loadInitialFeedAction();
+  }
+  updateState() {
+    this.realFeedComponent = this.ngRedux.getState().feed;
+    this.isLoadingComponent = this.ngRedux.getState().isContentLoading;
   }
   postNewItem(feedItem: any) {
-    console.log('postNewItem' + feedItem);
-    this.realFeedComponent.unshift(feedItem);
+    this.fIAction.addNewFeedItemAction(feedItem);
   }
 };

@@ -28,6 +28,8 @@ export default class UploadMediaAPI {
                 : 'shared an image from his document' ;
                 this.feedMessageJson.object['attachments'] = [];
                 this.loopMultipleMediaFiles(domElem.files).then(() => {
+                    // reset content
+                    domElem.value = '';
                     resolve(true);
                 });
             } else {

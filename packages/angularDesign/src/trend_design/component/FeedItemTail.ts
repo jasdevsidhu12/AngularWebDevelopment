@@ -5,15 +5,16 @@ import * as moment from 'moment';
   selector: 'feed-item-tail',
   template:
   `<div class="feed-item-tail">
-    <div [ngClass]="{ 'anchor-comment': showComment}">
-        <b>{{ count }}
+    <div class="{ 'anchor-comment': showComment}">
+        <b>{{ comment.length }}
             <a (click)="commentClickEvent($event)" class="comment-link">
                 Comments
             </a>
         </b>
     </div>
     <div *ngIf="showComment" class="feed-comment-wrapper">
-        <feed-comment-creator [imgUrl]="profilePicUrl" [name]="fullName">
+        <feed-comment-creator [imgUrl]="profilePicUrl"
+        [itemID]='itemID' [name]="fullName">
         </feed-comment-creator>
         <div *ngFor='let comm of comment'>
             <feed-item-tail-comment [imgUrl]="comm.actor.url" [name]="comm.actor.displayName"
@@ -24,18 +25,18 @@ import * as moment from 'moment';
     </div>
   </div>`
 })
-
+//  <div *ngIf="showComment" class="feed-comment-wrapper">
 export class FeedItemTail {
+    @Input()itemID: string;
     @Input()comment: Array<any>;
     @Input()fullName: string;
     @Input()profilePicUrl: string;
-    count: number;
     showComment: boolean;
     ngOnInit() {
         this.showComment = false;
-        if (this.comment) {
-            this.count = this.comment.length;
-        }
+    }
+    ngOnChanges() {
+        console.log('something change');
     }
     commentClickEvent() {
         this.showComment = this.showComment ? false : true;

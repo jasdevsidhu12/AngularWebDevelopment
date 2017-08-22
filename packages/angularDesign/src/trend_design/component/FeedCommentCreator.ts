@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { FIAction } from '../action/FIAction';
 
 @Component({
     selector: 'feed-comment-creator',
@@ -9,16 +10,48 @@ import { Component, Input } from '@angular/core';
                 <div class="comment-body-left">
                     <div class="comment-body-name">
                         <b> {{ name }} {{ counter$ }}</b>
-                        <button>Post</button>
+                        <button type="button" class="btn btn-primary" (click)="postComment($event)" >
+                            Post
+                        </button>
                     </div>
                     <div class="comment-body-content">
-                        <input type="text" />
+                        <input type="text" #commentInput />
                     </div>
                 </div>
             </div>`
 })
 
 export class FeedCommentCreator {
+    @Input() itemID: string;
     @Input() imgUrl: string;
     @Input() name: string;
+    @ViewChild('commentInput') commentInput: any;
+    constructor(private fIAction: FIAction){}
+    postComment() {
+        const commentInput = this.commentInput.nativeElement;
+        const newComment = Object.assign({},
+            {
+                id: this.itemID,
+                comment: {
+                    "published": "2017-06-11T10:45:55Z",
+                    "actor": {
+                            "url": this.imgUrl,
+                            "id": "",
+                            "displayName": this.name
+                    },
+                    "verb": "comment",
+                    "object" : {
+                        "objectType": "text",
+                        "id": "",
+                        "url": "",
+                        "summary": "Congratulations Jasdev for your profile."
+                    }
+                }
+            }
+    );
+    newComment.comment.object.summary = commentInput.value;
+    commentInput.value = '';
+    newComment.comment.published = new Date().toISOString();
+    this.fIAction.addNewFeedCommentAction(newComment);
+    }
 };

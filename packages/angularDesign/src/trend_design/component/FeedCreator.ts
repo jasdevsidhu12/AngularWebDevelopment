@@ -1,4 +1,4 @@
-import { Component, EventEmitter, ViewChild, ElementRef, Output } from '@angular/core';
+import { Component, EventEmitter, ViewChild, Output, Input } from '@angular/core';
 import UploadMediaAPI from '../api/UploadMediaAPI';
 
 @Component({
@@ -24,22 +24,22 @@ import UploadMediaAPI from '../api/UploadMediaAPI';
 })
 
 export class FeedCreator {
-    constructor(private elRef:ElementRef) {}
-
     @ViewChild('myMessage') myMessage: any;
     @ViewChild('uploadFile') uploadFile: any;
     @ViewChild('labelForUpload') labelForUpload: any;
     @ViewChild('discusionGroupName') disGrpName: any;
+    @Input('feedLength')feedLength: any;
+
     @Output() postNewItem = new EventEmitter();
     uploadMedia = new UploadMediaAPI();
     feedMessageJson: any;
-    
     ngOnInit() {
         this.uploadMedia.setMediaObject(this.uploadFile, this.labelForUpload);
     }
     postItem(event: UIEvent) {
-        this.feedMessageJson = new Object();
-        this.feedMessageJson = {
+        const uniqueID = parseInt(this.feedLength) + 1;
+        this.feedMessageJson = Object.assign({}, {
+            "id": uniqueID,
             "published": "2017-06-09T10:45:55Z",
             "actor": {
                 "url": "",
@@ -53,8 +53,9 @@ export class FeedCreator {
                 "id": "",
                 "url": "",
                 "summary": ""
-            }
-        };
+            },
+            "comment": []
+        });
         this.uploadMedia.setMediatoFeed(this.feedMessageJson).then((isMediaSetToFeed) => {
             this.checkAndSetDiscussionGroup();
             if (this.myMessage.nativeElement.value.toString() !== '') {
