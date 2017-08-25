@@ -20,7 +20,7 @@ npm install <br >
 
 ### Run the Project
 npm start <br >
-http://localhost:8080/
+http://localhost:8080/ <br />
 **The project will is also publicly available at http://ec2-34-240-16-43.eu-west-1.compute.amazonaws.com:8080/**
 
 ### Run unit test
