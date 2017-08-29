@@ -24,6 +24,20 @@ $width: 440px;
   background-color: #f2f2f2;
   box-shadow: 5px 5px 2px #888888;
 }
+
+@mixin feed-btn-ui {
+  border: 2px solid #ccc;
+  color: #95989A;
+  font-weight: bold;
+  background-color: transparent;
+  width: 50px;
+  text-align: center;
+  &:hover {
+      background-color: #FCFCFC;
+      cursor: pointer;
+    }
+}
+
 @mixin feed-item-container {
   // border: solid black 1px;
   // min-height: $minHeight;
@@ -106,6 +120,13 @@ $width: 440px;
         .comment-body-content, .comment-body-name {
           padding-left: 10px;
           max-width: 300px;
+          .feed-btn-ui {
+            @include feed-btn-ui;
+            width: 50px;
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-left: 10px;
+          }
           input {
             border: none;
             border-bottom: solid black 1px;
@@ -130,6 +151,7 @@ $width: 440px;
   border-radius: 50%;
   z-index: 1;
 }
+
 
 @mixin feed-item-style {
   .feed-item-wrapper {
@@ -182,16 +204,7 @@ $width: 440px;
         display: none;
       }
       .feed-btn-ui {
-        border: 2px solid #ccc;
-        color: #95989A;
-        font-weight: bold;
-        background-color: transparent;
-        width: 50px;
-        text-align: center;
-        &:hover {
-            background-color: #FCFCFC;
-            cursor: pointer;
-          }
+        @include feed-btn-ui;
       }
       .upload-btn {
         width: 140px;

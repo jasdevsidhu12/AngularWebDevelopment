@@ -33,7 +33,7 @@ export class FeedCreator {
     @Output() postNewItem = new EventEmitter();
     uploadMedia = new UploadMediaAPI();
     feedMessageJson: any;
-    ngOnInit() {
+    ngOnInit():void {
         this.uploadMedia.setMediaObject(this.uploadFile, this.labelForUpload);
     }
     postItem(event: UIEvent) {

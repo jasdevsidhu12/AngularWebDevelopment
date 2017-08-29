@@ -4,6 +4,7 @@ import  { IAppState } from '../reducer/FIReducer'
 import { FIAction } from '../action/FIAction';
 import { Observable } from 'rxjs';
 import { configureStore } from '../store/store';
+import * as moment from 'moment';
 
 @Component({
   selector: 'main-comp',
@@ -17,7 +18,14 @@ import { configureStore } from '../store/store';
       feedLength="{{ realFeedComponent.length }}">
       </feed-creator>
       <div *ngFor='let feed of realFeedComponent'>
-        <feed-item [feed]='feed'></feed-item>
+        <feed-item
+        [fdID]='feed.id'
+        [fdFullName]='feed.actor.displayName'
+        [fdProfilePicUrl]='feed.actor.image'
+        [fdTitle]='feed.title'
+        [fdObject]='feed.object'
+        [fdTimeStamp]='feed.published'
+        [fdComment]='feed.comment'></feed-item>
       </div>
     </div>
   </div>`

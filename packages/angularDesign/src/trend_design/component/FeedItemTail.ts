@@ -6,7 +6,7 @@ import * as moment from 'moment';
   template:
   `<div class="feed-item-tail">
     <div class="{ 'anchor-comment': showComment}">
-        <b>{{ comment.length }}
+        <b>{{ numOfComments(comment.length) }}
             <a (click)="commentClickEvent($event)" class="comment-link">
                 Comments
             </a>
@@ -25,18 +25,29 @@ import * as moment from 'moment';
     </div>
   </div>`
 })
-//  <div *ngIf="showComment" class="feed-comment-wrapper">
+
 export class FeedItemTail {
     @Input()itemID: string;
     @Input()comment: Array<any>;
     @Input()fullName: string;
     @Input()profilePicUrl: string;
     showComment: boolean;
-    ngOnInit() {
+
+    ngOnInit():void {
         this.showComment = false;
     }
+
     ngOnChanges() {
-        console.log('something change');
+        console.log('changes');
+    }
+
+    numOfComments(numOfComments:number) {
+        if (numOfComments > 0) {
+            return numOfComments;
+        } else {
+            return "No";
+        }
+
     }
     commentClickEvent() {
         this.showComment = this.showComment ? false : true;

@@ -10,9 +10,7 @@ import { FIAction } from '../action/FIAction';
                 <div class="comment-body-left">
                     <div class="comment-body-name">
                         <b> {{ name }} {{ counter$ }}</b>
-                        <button type="button" class="btn btn-primary" (click)="postComment($event)" >
-                            Post
-                        </button>
+                        <label class="feed-btn-ui" (click)="postComment($event)">Post</label>
                     </div>
                     <div class="comment-body-content">
                         <input type="text" #commentInput />

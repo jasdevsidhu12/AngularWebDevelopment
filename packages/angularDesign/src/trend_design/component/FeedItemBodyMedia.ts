@@ -15,7 +15,7 @@ import { Component, Input } from '@angular/core';
 export class FeedItemBodyMedia {
     @Input()attachments : any;
     private media: any;
-    ngOnInit() {
+    ngOnInit():void {
         this.media = this.attachments;
     }
 }

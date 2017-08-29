@@ -11,25 +11,28 @@ export interface IAppState {
 };
 const initialState = { feed: [{}], isContentLoading: true };
 
-export default function feedItemReducer(state: IAppState = initialState, payload:any): IAppState {
+export default function feedItemReducer(state: IAppState = initialState, action:any): IAppState {
     let newState: IAppState;
-    switch(payload.type) {
+    switch(action.type) {
         case ADD_NEW_FEED:
-        const feed = [...state.feed ];
-        feed.unshift(payload.action);
+        const feed = [ ...state.feed ];
+        feed.unshift(action.payload);
         newState = { ...state, feed };
         break;
         case ADD_NEW_COMMENT:
-        const feedArray = [...state.feed];
+        const feedArray = [ ...state.feed ];
         feedArray.forEach((obj: any) => {
-            if (obj.id === payload.action.id) {
-                obj.comment.unshift(payload.action.comment);
+            if (obj.id === action.payload.id) {
+                obj.comment.unshift(action.payload.comment);
+                //  obj.actor.displayName = 'Roshan';
             }
         });
+        console.log('feedArray');
+        console.log(feedArray);
         newState = { ...state, feed: feedArray };
         break;
         case LOAD_INITIAL_FEED:
-        newState = { ...state, feed: payload.action, isContentLoading: false };
+        newState = { ...state, feed: action.payload, isContentLoading: false };
         break
         case LOADING_COMPONENTS:
         newState = { ...state, isContentLoading: true }; 

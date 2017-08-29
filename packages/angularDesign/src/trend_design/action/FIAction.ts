@@ -8,14 +8,14 @@ import { Injectable } from '@angular/core';
 export class FIAction {
     constructor(private ngRedux: NgRedux<IAppState>, private feedService: FeedService) {
     }
-    addNewFeedCommentReducer(action: any) {
-        return { type: ADD_NEW_COMMENT, action };
+    addNewFeedCommentReducer(payload: any) {
+        return { type: ADD_NEW_COMMENT, payload };
     }
-    addNewFeedItemReducer(action: any) {
-        return { type: ADD_NEW_FEED, action };
+    addNewFeedItemReducer(payload: any) {
+        return { type: ADD_NEW_FEED, payload };
     }
-    loadInitialFeedReducer(action:any) {
-        return { type: LOAD_INITIAL_FEED, action };
+    loadInitialFeedReducer(payload:any) {
+        return { type: LOAD_INITIAL_FEED, payload };
     }
     loadingComponentWhileWaiting() {
         return { type: LOADING_COMPONENTS };
