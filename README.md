@@ -8,7 +8,7 @@ The idea of this project(packages/angularDesign/trend_design) is to create proto
 Jasdev Sidhu
 
 ## Badge
-[![Build Status](https://travis-ci.org/jasdevsidhu12/AngularWebDevelopment.svg?branch=master)](https://travis-ci.org/jasdevsidhu12/AngularWebDevelopment)
+[![Build Status](https://travis-ci.org/jasdevsidhu12/FeedService.svg?branch=master)](https://travis-ci.org/jasdevsidhu12/FeedService)
 
 ## Prerequisites and Run the Project
 
@@ -22,7 +22,7 @@ npm install <br >
 
 ### Run the Project
 npm start <br >
-http://localhost:8080/<br />
+http://localhost:8080/ <br />
 **The project will is also publicly available at http://ec2-34-240-16-43.eu-west-1.compute.amazonaws.com:8080/**
 
 ### Run unit test
