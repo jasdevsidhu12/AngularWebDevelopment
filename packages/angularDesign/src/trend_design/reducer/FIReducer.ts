@@ -19,6 +19,7 @@ export default function feedItemReducer(state: IAppState = initialState, action:
         feed.unshift(action.payload);
         newState = { ...state, feed };
         break;
+
         case ADD_NEW_COMMENT:
         const feedArray = [ ...state.feed ];
         feedArray.forEach((obj: any) => {
@@ -27,17 +28,20 @@ export default function feedItemReducer(state: IAppState = initialState, action:
                 //  obj.actor.displayName = 'Roshan';
             }
         });
-        console.log('feedArray');
-        console.log(feedArray);
         newState = { ...state, feed: feedArray };
         break;
+
         case LOAD_INITIAL_FEED:
         newState = { ...state, feed: action.payload, isContentLoading: false };
-        break
+        break;
+
         case LOADING_COMPONENTS:
         newState = { ...state, isContentLoading: true }; 
         break;
+
         default: newState = state; break;
     }
+    console.log('--New State--');
+    console.log(newState);
     return newState;
 }

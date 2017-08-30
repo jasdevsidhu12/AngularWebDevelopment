@@ -1,5 +1,6 @@
-import { Component, EventEmitter, ViewChild, Output, Input } from '@angular/core';
+import { Component, EventEmitter, ViewChild, Output, Input, OnInit } from '@angular/core';
 import UploadMediaAPI from '../api/UploadMediaAPI';
+import { newFeed } from '../api/FIUtils';
 
 @Component({
     selector: 'feed-creator',
@@ -23,7 +24,7 @@ import UploadMediaAPI from '../api/UploadMediaAPI';
                </div>`
 })
 
-export class FeedCreator {
+export class FeedCreator implements OnInit {
     @ViewChild('myMessage') myMessage: any;
     @ViewChild('uploadFile') uploadFile: any;
     @ViewChild('labelForUpload') labelForUpload: any;
@@ -33,50 +34,43 @@ export class FeedCreator {
     @Output() postNewItem = new EventEmitter();
     uploadMedia = new UploadMediaAPI();
     feedMessageJson: any;
+
     ngOnInit():void {
         this.uploadMedia.setMediaObject(this.uploadFile, this.labelForUpload);
     }
-    postItem(event: UIEvent) {
-        const uniqueID = parseInt(this.feedLength) + 1;
-        this.feedMessageJson = Object.assign({}, {
-            "id": uniqueID,
-            "published": "2017-06-09T10:45:55Z",
-            "actor": {
-                "url": "",
-                "id": "",
-                "displayName": "Jasdev Sidhu",
-                "image": "../../resources/data/profile_images/trevor_noah.jpeg"
-            },
-            "title": "posted a message",
-            "object" : {
-                "objectType": "text",
-                "id": "",
-                "url": "",
-                "summary": ""
-            },
-            "comment": []
-        });
-        this.uploadMedia.setMediatoFeed(this.feedMessageJson).then((isMediaSetToFeed) => {
-            this.checkAndSetDiscussionGroup();
-            if (this.myMessage.nativeElement.value.toString() !== '') {
-                this.feedMessageJson.object.summary =
-                this.myMessage.nativeElement.value.replace('\n',"<br />");
-                this.feedMessageJson.published = new Date().toISOString();
-                this.postNewItem.emit(this.feedMessageJson);
-            } else if (isMediaSetToFeed) {
-                 this.feedMessageJson.published = new Date().toISOString();
-                this.postNewItem.emit(this.feedMessageJson);
-            }
-            this.clearFeedCreatorInputs();
-        });
+    
+    postItem(event: UIEvent):void {
+        this.feedMessageJson = Object.assign({}, newFeed, { comment: []});
+        this.setDefaultFeedInformation();
+        this.checkAndSetDiscussionGroup();
+        if (this.uploadMedia.isUserSetMediaToFeed()) {
+            this.uploadMedia.setMediatoFeed(this.feedMessageJson)
+            .then((feedJSONMedia) => {
+                this.clearFeedCreatorInputs();
+                this.postNewItem.emit(feedJSONMedia);
+            });
+        } else {
+            this.postNewItem.emit(this.feedMessageJson);
+        }
     }
-    checkAndSetDiscussionGroup() {
+
+    setDefaultFeedInformation():void {
+        if (this.myMessage.nativeElement.value.toString() !== '') {
+            this.feedMessageJson.object.summary =
+            this.myMessage.nativeElement.value.replace('\n',"<br />");
+        }
+        this.feedMessageJson.published = new Date().toISOString();
+        this.feedMessageJson.id = parseInt(this.feedLength) + 1;
+    }
+
+    checkAndSetDiscussionGroup():void {
         const disGrpName = this.disGrpName.nativeElement.value;
         if(disGrpName !== '') {
             this.feedMessageJson.title =
             'created a discussion group <a href>' + disGrpName + '</a>';
         }
     }
+
     clearFeedCreatorInputs() {
         this.disGrpName.nativeElement.value = '';
         this.labelForUpload.nativeElement.innerText = 'Upload Images';

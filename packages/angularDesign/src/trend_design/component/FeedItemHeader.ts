@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'feed-item-header',
@@ -14,7 +15,7 @@ import { Component, Input } from '@angular/core';
         </div>
       </div>
       <div class="timestamp">
-        <div> {{ timeStamp }} </div>
+        <div> {{ convertToMoment(timeStamp) }} </div>
       </div>
     </div>`
 })
@@ -23,4 +24,7 @@ export class FeedItemHeader {
   @Input()name: string;
   @Input()typeOfPost: string;
   @Input()timeStamp: string;
+  convertToMoment(timeStamp:any) {
+    return moment(timeStamp).fromNow();
+  }
 };

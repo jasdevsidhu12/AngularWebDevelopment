@@ -26,11 +26,11 @@ import { configureStore } from '../store/store';
 })
 
 export class FeedItem {
-  @Input()fdID: string = "";
-  @Input()fdProfilePicUrl: string = "";
-  @Input()fdFullName: string = "";
-  @Input()fdTitle: string = "";
-  @Input()fdObject: any = undefined;
+  @Input()fdID: string;
+  @Input()fdProfilePicUrl: string;
+  @Input()fdFullName: string;
+  @Input()fdTitle: string;
+  @Input()fdObject: any;
   @Input()fdTimeStamp: string;
-  @Input()fdComment: Array<any> = [];
+  @Input()fdComment: Array<any>;
 };

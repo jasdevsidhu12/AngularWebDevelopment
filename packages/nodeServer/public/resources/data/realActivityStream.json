@@ -97,11 +97,11 @@
                 "id": "",
                 "url": "",
                 "attachments": [
-                    {"objectType": "image", "url": "https://www.projectsmart.co.uk/img/swot-analysis.png",
+                    { "id": 1, "objectType": "image", "url": "https://www.projectsmart.co.uk/img/swot-analysis.png",
                     "width": "200", "height": "200" },
-                    {"objectType": "image", "url": "http://hs-site-ikblelwn7n3cbuq.netdna-ssl.com/wp-content/uploads/Healthcare-SWOT-Analysis-1.jpg",
+                    { "id": 2, "objectType": "image", "url": "http://hs-site-ikblelwn7n3cbuq.netdna-ssl.com/wp-content/uploads/Healthcare-SWOT-Analysis-1.jpg",
                     "width": "200", "height": "200" },
-                    {"objectType": "image", "url": "https://fthmb.tqn.com/ZYZs37huHgXli8dISTc_azBzoX4=/3000x1500/filters:no_upscale():fill(transparent,1)/about/swot-analysis-56a605a75f9b58b7d0df83ce.jpg",
+                    { "id": 3, "objectType": "image", "url": "https://fthmb.tqn.com/ZYZs37huHgXli8dISTc_azBzoX4=/3000x1500/filters:no_upscale():fill(transparent,1)/about/swot-analysis-56a605a75f9b58b7d0df83ce.jpg",
                     "width": "200", "height": "200" }
                 ],
                 "summary": "Hey There <br> please checkout the screenshots from the online meeting last week.<br> Thank you."

@@ -15,7 +15,7 @@ import * as moment from 'moment';
     </div>
     <div *ngIf='!isLoadingComponent' class="activity-stream-body">
       <feed-creator (postNewItem)="postNewItem($event)"
-      feedLength="{{ realFeedComponent.length }}">
+      [feedLength]='realFeedComponent.length'>
       </feed-creator>
       <div *ngFor='let feed of realFeedComponent'>
         <feed-item

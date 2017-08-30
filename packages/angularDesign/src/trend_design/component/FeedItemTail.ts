@@ -37,10 +37,6 @@ export class FeedItemTail {
         this.showComment = false;
     }
 
-    ngOnChanges() {
-        console.log('changes');
-    }
-
     numOfComments(numOfComments:number) {
         if (numOfComments > 0) {
             return numOfComments;

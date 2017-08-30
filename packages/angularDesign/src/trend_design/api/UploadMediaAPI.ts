@@ -8,64 +8,58 @@ export default class UploadMediaAPI {
     }
 
     updateUploadButtonUI(labelForUpload: any) {
-        const domUploadElem = this.uploadFile.nativeElement;
+        const domUploadDocElem = this.uploadFile.nativeElement;
         const domLabelElem = labelForUpload.nativeElement;
-        domUploadElem.onchange = () => {
-            const filesLength = domUploadElem.files.length;
+        domUploadDocElem.onchange = () => {
+            const filesLength = domUploadDocElem.files.length;
             domLabelElem.innerText =
             filesLength > 0 ?
             (filesLength > 1 ? filesLength.toString() + ' Images': '1 Image') :
             'Upload Images';
         }
     }
+
+    isUserSetMediaToFeed() {
+        const domUploadDocElem = this.uploadFile.nativeElement;
+        if (domUploadDocElem.files.length > 0) {
+            return true;
+        }
+        return false;
+    }
+
     setMediatoFeed(feedMessageJson: any) {
+        const uploadedFiles = this.uploadFile.nativeElement.files;
+        const convertFiles = new Array();
+        this.feedMessageJson = { ...feedMessageJson, object: { attachments: [] } };
+        this.feedMessageJson.title =
+        uploadedFiles.length > 1 ? 'shared images from his document'
+        : 'shared an image from his document';
         return new Promise((resolve) => {
-            this.feedMessageJson = feedMessageJson;
-            const domElem = this.uploadFile.nativeElement;
-            if (domElem.files.length > 0) {
-                this.feedMessageJson.title =
-                domElem.files.length > 1 ? 'shared images from his document'
-                : 'shared an image from his document' ;
-                this.feedMessageJson.object['attachments'] = [];
-                this.loopMultipleMediaFiles(domElem.files).then(() => {
-                    // reset content
-                    domElem.value = '';
-                    resolve(true);
-                });
-            } else {
-                resolve(false);
+            for (let fileIndex = 0; fileIndex < uploadedFiles.length; fileIndex++) {
+                convertFiles
+                .push(this.convertFiletoUrl(uploadedFiles[fileIndex], fileIndex));
             }
+            Promise.all(convertFiles).then((convertedFiles) => {
+                this.uploadFile.nativeElement.value = '';
+                this.feedMessageJson.object.attachments = [...convertedFiles];
+                resolve(this.feedMessageJson);
+            });
         });
     }
-    loopMultipleMediaFiles(files: Array<any>, count=0) {
+    convertFiletoUrl(file: any, count: any) {
+        const fileReader = new FileReader();
         return new Promise((resolve) => {
-            if (count < files.length) {
-                this.convertFiletoUrl(files[count]).then(() => {
-                    count++;
-                    this.loopMultipleMediaFiles(files, count);
-                });
-            }
-            resolve(true);
-            
-        });
-    }
-    convertFiletoUrl(file: any) {
-        return new Promise((resolve) => {
-            const fileReader = new FileReader();
             fileReader.onloadend = (fsevent) => {
-                this.feedMessageJson.object.attachments.push({
+                 const attachments = {
+                    "id": parseInt(count),
                     "objectType": "image",
                     "url": fileReader.result,
                     "width": "200",
                     "height": "200"
-                });
-                resolve(true);
+                };
+                resolve(attachments);
             }
-            if (file.type.indexOf('image') > -1) {
-                fileReader.readAsDataURL(file);
-            } else {
-                resolve(false);
-            }
+            fileReader.readAsDataURL(file);
         });
     }
 }

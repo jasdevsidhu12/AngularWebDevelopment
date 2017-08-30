@@ -3,19 +3,22 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'feed-item-body-media',
   template:
-  `<div class="feed-item-body-media">
+  `
+  <div class="feed-item-body-media">
     <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let m of media">
-            <img src="{{ m.url }}" />
-        </ng-template>
+        <ng-container>
+            {{ print(attachments) }}
+            <ng-template ngbSlide *ngFor="let slide of attachments">
+                <img src="{{ slide.url }}" />
+            </ng-template>
+        </ng-container>
     </ngb-carousel>
   </div>`
 })
 
 export class FeedItemBodyMedia {
-    @Input()attachments : any;
-    private media: any;
-    ngOnInit():void {
-        this.media = this.attachments;
+    @Input()attachments: any;
+    print(obj:any) {
+        //  debugger;
     }
 }

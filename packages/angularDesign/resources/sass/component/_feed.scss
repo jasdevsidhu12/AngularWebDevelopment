@@ -1,10 +1,13 @@
 $minHeight: 200px;
 $width: 440px;
+$feedItemBackgroundColor: #f2f2f2;
+$bodyBackgroundColor: white;
 
 @mixin body-activity-stream {
   width: 100%;
   //  height: 100%;
-  border: solid black 1px;
+  //  border: solid black 1px;
+  background-color: $bodyBackgroundColor;
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -21,7 +24,7 @@ $width: 440px;
   display: flex;
   flex-direction: column;
   width: $width;
-  background-color: #f2f2f2;
+  background-color: $feedItemBackgroundColor;
   box-shadow: 5px 5px 2px #888888;
 }
 
@@ -33,7 +36,7 @@ $width: 440px;
   width: 50px;
   text-align: center;
   &:hover {
-      background-color: #FCFCFC;
+      background-color: whitesmoke;
       cursor: pointer;
     }
 }
